@@ -1,0 +1,2 @@
+class PatchNote < ApplicationRecord
+end
