@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_005024) do
+ActiveRecord::Schema.define(version: 2020_08_27_000955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_005024) do
     t.string "frame_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
   end
 
   create_table "color_costumes", force: :cascade do |t|
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_005024) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "character_id"
   end
 
   create_table "combos", force: :cascade do |t|
@@ -36,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_08_20_005024) do
     t.text "notation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "character_id"
+    t.integer "user_id"
   end
 
   create_table "dlcs", force: :cascade do |t|
@@ -43,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_005024) do
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -57,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_005024) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
   end
 
   create_table "stages", force: :cascade do |t|
@@ -64,18 +70,23 @@ ActiveRecord::Schema.define(version: 2020_08_20_005024) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
   end
 
   create_table "tier_lists", force: :cascade do |t|
     t.string "list"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
+    t.integer "user_id"
   end
 
   create_table "tips", force: :cascade do |t|
     t.text "tips_list"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "character_id"
+    t.integer "user_id"
   end
 
   create_table "tutorials", force: :cascade do |t|
@@ -83,6 +94,8 @@ ActiveRecord::Schema.define(version: 2020_08_20_005024) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "body"
+    t.integer "character_id"
+    t.integer "user_id"
   end
 
   create_table "universals", force: :cascade do |t|
