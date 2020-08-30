@@ -19,5 +19,15 @@ class Api::TierListsController < ApplicationController
     end
   end
 
+  def update
+    @tier_list = TierList.find_by(id: params[:id])
+    @tier_list.list = params[:list] || @tier_list.list
+    @tier_list.game_id = params[:game_id] || @tier_list.game_id
+    @tier_list.user_id = params[:user_id] || @tier_list.user_id
+
+    @tier_list.save!
+    render "show.json.jb"
+  end
+
   
 end
