@@ -23,5 +23,8 @@ Rails.application.routes.draw do
     get "/tutorials/:id" => "tutorials#show"
     post "/tutorials" => "tutorials#create"
     patch "/tutorials/:id" => "tutorials#update"
+
+    post "/users" => "users#create"
+    get "/sessions" => "sessions#create"
   end
 end
