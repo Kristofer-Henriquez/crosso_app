@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     patch "/tips/:id" => "tips#update"
 
     get "/tutorials/:id" => "tutorials#show"
+    post "/tutorials" => "tutorials#create"
   end
 end
