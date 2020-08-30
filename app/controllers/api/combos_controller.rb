@@ -31,5 +31,9 @@ class Api::CombosController < ApplicationController
     render "show.json.jb"
   end
 
-  
+  def destroy
+    @combo = Combo.find_by(id: params[:id])
+    @combo.destroy
+    render json: {message: "you have successfully deleted the video!"}
+  end
 end

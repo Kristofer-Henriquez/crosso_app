@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     get "/combos/:id" => "combos#show"
     post "/combos" => "combos#create"
     patch "/combos/:id" => "combos#update"
+    delete "/combos/:id" => "combos#destroy"
   end
 end
