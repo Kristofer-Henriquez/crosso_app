@@ -1,0 +1,6 @@
+{
+  title: @tutorial.title,
+  body: @tutorial.body,
+  character_id: @tutorial.character_id,
+  user_id: @tutorial.user_id
+}
