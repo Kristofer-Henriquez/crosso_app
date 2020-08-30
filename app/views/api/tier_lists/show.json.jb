@@ -1,0 +1,5 @@
+{
+  list: @tier_list.list, 
+  game_id: @tier_list.game_id,
+  user_id: @tier_list.user_id 
+}

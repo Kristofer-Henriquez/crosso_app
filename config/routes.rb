@@ -11,5 +11,7 @@ Rails.application.routes.draw do
     post "/combos" => "combos#create"
     patch "/combos/:id" => "combos#update"
     delete "/combos/:id" => "combos#destroy"
+
+    get "/tier_lists/:id" => "tier_lists#show"
   end
 end
