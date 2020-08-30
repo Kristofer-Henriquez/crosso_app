@@ -5,4 +5,20 @@ class Api::TipsController < ApplicationController
     render "show.json.jb"
   end
 
+  def create
+    @tips = Tip.new(
+      tips_list: params[:tips_list],
+      character_id: params[:character_id],
+      user_id: params[:user_id]
+    )
+  
+    if @tips.save
+      render "show.json.jb"
+    else 
+      render json: {errors: @tier_list.error.full_messages}
+    end
+  end
+
+  
+
 end

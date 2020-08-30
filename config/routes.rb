@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     patch "/tier_lists/:id" => "tier_lists#update"
 
     get "/tips/:id" => "tips#show"
-
+    post "/tips" => "tips#create"
   end
 end
