@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
     get "/tips/:id" => "tips#show"
     post "/tips" => "tips#create"
+    patch "/tips/:id" => "tips#update"
   end
 end
