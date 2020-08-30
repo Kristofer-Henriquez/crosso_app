@@ -20,4 +20,15 @@ class Api::TutorialsController < ApplicationController
     end
   end
 
+  def update
+    @tutorial = Tutorial.find_by(id: params[:id])
+    @tutorial.title = params[:title] || @tutorial.title
+    @tutorial.body = params[:body] || @tutorial.body
+    @tutorial.character_id = params[:character_id] || @tutorial.character_id
+    @tutorial.user_id = params[:user_id] || @tutorial.user_id
+
+    @tutorial.save!
+    render "show.json.jb"
+  end
+
 end
