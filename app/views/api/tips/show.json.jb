@@ -1,0 +1,5 @@
+{
+  tips_list: @tips.tips_list,
+  character_id: @tips.character_id,
+  user_id: @tips.user_id
+}
