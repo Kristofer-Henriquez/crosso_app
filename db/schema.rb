@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_183911) do
+ActiveRecord::Schema.define(version: 2020_09_01_011035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_08_30_183911) do
     t.integer "dlc_id"
     t.integer "stage_id"
     t.integer "patch_notes_id"
+    t.string "game_url"
   end
 
   create_table "patch_notes", force: :cascade do |t|
