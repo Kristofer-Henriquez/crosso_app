@@ -1,0 +1,7 @@
+{
+  name: @character.name,
+  default_image: @character.default_image,
+  command_list: @character.command_list,
+  frame_data: @character.frame_data,
+  game_id: @character.game_id
+}

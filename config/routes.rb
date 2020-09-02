@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     get "/games" => "games#index"
     get "/games/:id" => "games#show"
 
+    get "/characters" => "characters#index"
+    get "/characters/:id" => "characters#show"
+
     get "/combos/:id" => "combos#show"
     post "/combos" => "combos#create"
     patch "/combos/:id" => "combos#update"
