@@ -1,5 +1,6 @@
 {
   id: @game.id,
   title: @game.title,
-  release_date: @game.release_date
+  release_date: @game.release_date,
+  game_url: @game.game_url
 }
