@@ -16,15 +16,13 @@ class Api::CombosController < ApplicationController
     @combo = Combo.new(
       user_id: current_user.id,
       combo_video: params[:combo_video],
-      character_id: params[:character_id],
       notation: params[:notation],
-      user_id: current_user.id
     )
 
     if @combo.save
       render "show.json.jb"
     else 
-      render json: {errors: @combo.error.full_messages}
+      render json: {errors: @combo.errors.full_messages}
     end
   end
 

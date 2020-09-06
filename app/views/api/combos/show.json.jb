@@ -1,6 +1,5 @@
 {
   combo_video: @combo.combo_video,
   notation: @combo.notation,
-  character_id: @combo.character_id,
   user_id: @combo.user_id
 }
