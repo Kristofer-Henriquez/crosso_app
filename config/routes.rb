@@ -34,5 +34,7 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
     get "/sessions" => "sessions#create"
     post "/sessions" => "sessions#create"
+
+    get "/universals" => "universals#index"
   end
 end
