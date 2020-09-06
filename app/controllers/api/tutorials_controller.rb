@@ -1,5 +1,13 @@
 class Api::TutorialsController < ApplicationController
 
+
+  before_action :authenticate_user
+
+  def index
+    @tutorials = Tutorial.where(user_id: current_user.id)
+    render "index.json.jb"
+  end
+
   def show
     @tutorial = Tutorial.find_by(id: params[:id])
     render "show.json.jb"

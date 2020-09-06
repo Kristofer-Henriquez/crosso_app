@@ -1,5 +1,12 @@
 class Api::CombosController < ApplicationController
 
+  before_action :authenticate_user
+
+  def index
+    @combos = Combo.where(user_id: current_user.id)
+    render "index.json.jb"
+  end
+
   def show
     @combo = Combo.find_by(id: params[:id])
     render "show.json.jb"
@@ -7,10 +14,11 @@ class Api::CombosController < ApplicationController
 
   def create
     @combo = Combo.new(
+      user_id: current_user.id,
       combo_video: params[:combo_video],
       character_id: params[:character_id],
       notation: params[:notation],
-      user_id: params[:user_id]
+      user_id: current_user.id
     )
 
     if @combo.save
