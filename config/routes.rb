@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get "/characters/:id" => "characters#show"
 
     get "/combos" => "combos#index"
+    get "/combos/all" => "combos#indexall"
     get "/combos/:id" => "combos#show"
     post "/combos" => "combos#create"
     patch "/combos/:id" => "combos#update"

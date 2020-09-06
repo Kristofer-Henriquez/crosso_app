@@ -42,4 +42,12 @@ class Api::CombosController < ApplicationController
     @combo.destroy
     render json: {message: "you have successfully deleted the video!"}
   end
+
+  skip_before_action :authenticate_user, only: [:indexall]
+
+  def indexall
+    @combos = Combo.all.reverse
+    render "index.json.jb"
+  end
+
 end
