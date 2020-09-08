@@ -46,7 +46,7 @@ class Api::CombosController < ApplicationController
   skip_before_action :authenticate_user, only: [:indexall]
 
   def indexall
-    @combos = Combo.all.reverse
+    @combos = Combo.all.shuffle
     render "index.json.jb"
   end
 
